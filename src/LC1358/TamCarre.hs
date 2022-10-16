@@ -26,7 +26,7 @@ abcSubstrings' (c:cs) = abcSubstrings' cs . while valid (pushFront cs) . incr c
 -- [1] Advance front position by one
 -- [2] Decrement the count of the character we just removed
 -- [3] Increment the valid substr count by `length unknownChars + 1`. Why?
---     Because if "abc***" is valid then "abc", "abc*", "abc**" are also valid
+--     Because if "abc***" is valid then "abc**", "abc*", "abc" are also valid
 pushFront :: String -> SlidingWindow -> SlidingWindow
 pushFront unknownChars sw = sw
     { frontPos     = sw.frontPos + 1
