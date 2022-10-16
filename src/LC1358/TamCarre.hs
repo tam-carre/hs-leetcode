@@ -1,7 +1,7 @@
 module LC1358.TamCarre (abcSubstrs) where
 
-abcSubstrs :: [Char] -> Int
-abcSubstrs = slidingWindow $ \window -> all (`elem` window) ['a', 'b', 'c']
+numberOfSubstrings :: [Char] -> Int
+numberOfSubstrings = slidingWindow $ \window -> all (`elem` window) "abc"
 
 data SlidingWindow a = SlidingWindow { count :: Int, wdw :: [a] }
 
