@@ -10,7 +10,7 @@ spec = it "LC1358" $ runTests implementations cases
 
 implementations :: [String -> Int]
 implementations =
-    [ LC1358.TamCarre.abcSubstrings
+    [ LC1358.TamCarre.abcSubstrs
     ]
 
 cases :: [(String, Int)]

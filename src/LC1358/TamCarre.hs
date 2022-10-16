@@ -1,44 +1,14 @@
-{-# LANGUAGE OverloadedRecordDot #-}
+module LC1358.TamCarre (abcSubstrs) where
 
-module LC1358.TamCarre (abcSubstrings) where
+abcSubstrs :: [Char] -> Int
+abcSubstrs = slidingWindow $ \window -> all (`elem` window) ['a', 'b', 'c']
 
-import Data.Map (Map)
-import qualified Data.Map as Map
+data SlidingWindow a = SW { count :: Int, wdw :: [a] }
 
-abcSubstrings :: String -> Int
-abcSubstrings input' = abcSubstrings' input' $ initialWindow input'
-
-data SlidingWindow = SW
-    { validSubstrs :: Int
-    , frontPos     :: Int
-    , counts       :: Map Char Int
-    , input        :: String
-    }
-
-initialWindow :: String -> SlidingWindow
-initialWindow = SW 0 0 $ Map.fromList [('a', 0), ('b', 0), ('c', 0)]
-
-abcSubstrings' :: String -> SlidingWindow -> Int
-abcSubstrings' ""     = validSubstrs
-abcSubstrings' (c:cs) = abcSubstrings' cs . while valid (pushFront cs) . incr c
-
--- | Here's what it means to "push the front":
--- [1] Advance front position by one
--- [2] Decrement the count of the character we just removed
--- [3] Increment the valid substr count by `length unknownChars + 1`. Why?
---     Because if "abc***" is valid then "abc**", "abc*", "abc" are also valid
-pushFront :: String -> SlidingWindow -> SlidingWindow
-pushFront unknownChars sw = sw
-    { frontPos     = sw.frontPos + 1
-    , counts       = Map.adjust (subtract 1) (sw.input !! sw.frontPos) sw.counts
-    , validSubstrs = sw.validSubstrs + length unknownChars + 1
-    }
-
-incr :: Char -> SlidingWindow -> SlidingWindow
-incr char sw = sw { counts = Map.adjust (+1) char sw.counts }
-
-valid :: SlidingWindow -> Bool
-valid sw = all (\char -> Map.findWithDefault 0 char sw.counts > 0) "abc"
-
-while :: (a -> Bool) -> (a -> a) -> a -> a
-while p = until (not . p)
+slidingWindow :: ([a] -> Bool) -> [a] -> Int
+slidingWindow validWdw list = loop list (SW 0 []) where
+    loop []        = count
+    loop (x:xs)    = loop xs . while (validWdw . wdw) (slideWdw xs) . addToWdw x
+    addToWdw x sw  = sw {wdw = x:wdw sw}
+    slideWdw xs sw = sw {count = count sw + length xs + 1, wdw = init (wdw sw)}
+    while p        = until (not . p)
