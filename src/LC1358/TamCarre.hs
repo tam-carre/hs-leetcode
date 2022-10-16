@@ -22,7 +22,7 @@ abcSubstrings' :: String -> SlidingWindow -> Int
 abcSubstrings' ""     = validSubstrs
 abcSubstrings' (c:cs) = abcSubstrings' cs . while valid (pushFront cs) . incr c
 
--- | Here's what it means to `push the front`:
+-- | Here's what it means to "push the front":
 -- [1] Advance front position by one
 -- [2] Decrement the count of the character we just removed
 -- [3] Increment the valid substr count by `length unknownChars + 1`. Why?
