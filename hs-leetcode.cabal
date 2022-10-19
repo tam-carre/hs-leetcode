@@ -25,7 +25,9 @@ source-repository head
 
 library
   exposed-modules:
-      LC1358.TamCarre
+      Problems.LC1.TamCarreOn2
+      Problems.LC1358.TamCarreSlidingWindow
+      ProblemUrls
   other-modules:
       Paths_hs_leetcode
   hs-source-dirs:
@@ -60,6 +62,7 @@ test-suite hs-leetcode-test
   main-is: Spec.hs
   other-modules:
       LC1358Spec
+      LC1Spec
       TestUtils
       Paths_hs_leetcode
   hs-source-dirs:

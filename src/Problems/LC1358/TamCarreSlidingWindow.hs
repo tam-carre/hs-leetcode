@@ -1,4 +1,4 @@
-module LC1358.TamCarre (numberOfSubstrings) where
+module Problems.LC1358.TamCarreSlidingWindow (numberOfSubstrings) where
 
 numberOfSubstrings :: [Char] -> Int
 numberOfSubstrings = slidingWindow $ \window -> all (`elem` window) "abc"
