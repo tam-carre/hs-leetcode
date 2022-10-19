@@ -4,14 +4,13 @@ import Data.Foldable (find)
 
 -- | O(n^2)
 twoSum :: [Int] -> Int -> (Int, Int)
-twoSum ints = findMatch intsWithIndices
+twoSum ints target = findAnswer intsWithIndices
   where
   intsWithIndices = zip [0..] ints
 
-  findMatch [] _ = error "not found"
-  findMatch (x:xs) target =
-    case find (isMatch target x) intsWithIndices of
-      Nothing    -> findMatch xs target
-      Just (i,_) -> (fst x, i)
+  findAnswer [] = error "not found"
+  findAnswer (x:xs) = case find (isMatch x) intsWithIndices of
+    Nothing    -> findAnswer xs
+    Just (i,_) -> (fst x, i)
 
-  isMatch target (i,x) (j,m) = x + m == target && i /= j
+  isMatch (i,x) (j,m) = x + m == target && i /= j
