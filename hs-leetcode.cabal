@@ -25,6 +25,7 @@ source-repository head
 
 library
   exposed-modules:
+      Problems.LC1.TamCarreOn
       Problems.LC1.TamCarreOn2
       Problems.LC1358.TamCarreSlidingWindow
       ProblemUrls
