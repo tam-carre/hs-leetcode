@@ -27,6 +27,7 @@ library
   exposed-modules:
       Problems.LC1.TamCarreOn
       Problems.LC1.TamCarreOn2
+      Problems.LC125.TamCarre
       Problems.LC1358.TamCarreSlidingWindow
       ProblemUrls
   other-modules:
@@ -62,6 +63,7 @@ test-suite hs-leetcode-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      LC125Spec
       LC1358Spec
       LC1Spec
       TestUtils
