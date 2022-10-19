@@ -8,7 +8,6 @@ twoSum ints target = findAnswer intsWithIndices
   where
   intsWithIndices = zip [0..] ints
 
-  findAnswer [] = error "not found"
   findAnswer (x:xs) = case find (isMatch x) intsWithIndices of
     Nothing    -> findAnswer xs
     Just (i,_) -> (fst x, i)
