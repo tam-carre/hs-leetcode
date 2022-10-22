@@ -30,6 +30,7 @@ library
       Problems.LC121.TamCarre
       Problems.LC125.TamCarre
       Problems.LC1358.TamCarreSlidingWindow
+      Problems.LC217.TamCarre
       ProblemUrls
   other-modules:
       Paths_hs_leetcode
@@ -68,6 +69,7 @@ test-suite hs-leetcode-test
       LC125Spec
       LC1358Spec
       LC1Spec
+      LC217Spec
       TestUtils
       Paths_hs_leetcode
   hs-source-dirs:
