@@ -1,12 +1,12 @@
 module LC1358Spec (spec) where
 
-import Test.Hspec (Spec, it)
+import Test.Hspec (Spec)
 import TestUtils (runTests)
 
 import qualified Problems.LC1358.TamCarreSlidingWindow
 
 spec :: Spec
-spec = it "LC1358" $ runTests implementations cases
+spec = runTests implementations cases
 
 implementations :: [String -> Int]
 implementations =

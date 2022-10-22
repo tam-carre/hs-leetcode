@@ -1,12 +1,12 @@
 module LC125Spec (spec) where
 
-import Test.Hspec (Spec, it)
+import Test.Hspec (Spec)
 import TestUtils (runTests)
 
 import qualified Problems.LC125.TamCarre
 
 spec :: Spec
-spec = it "LC1" $ runTests implementations cases
+spec = runTests implementations cases
 
 implementations :: [String -> Bool]
 implementations =

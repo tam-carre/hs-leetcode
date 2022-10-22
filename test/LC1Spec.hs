@@ -1,13 +1,13 @@
 module LC1Spec (spec) where
 
-import Test.Hspec (Spec, it)
+import Test.Hspec (Spec)
 import TestUtils (runTests2)
 
 import qualified Problems.LC1.TamCarreOn2
 import qualified Problems.LC1.TamCarreOn
 
 spec :: Spec
-spec = it "LC1" $ runTests2 implementations cases
+spec = runTests2 implementations cases
 
 implementations :: [[Int] -> Int -> (Int, Int)]
 implementations =
