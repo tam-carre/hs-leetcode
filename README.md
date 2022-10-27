@@ -5,7 +5,7 @@ Leetcode problems solved in Haskell.
 Solutions aim to use Haskell's expressive power to be more elegant,
 understandable and terse than other languages'.
 
-Take for example "238. Product of Array Except Self":
+Take for example "238. Product of Array Except Self (O(n))":
 
 ```hs
 productExceptSelf :: [Int] -> [Int]

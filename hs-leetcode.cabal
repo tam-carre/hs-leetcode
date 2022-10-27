@@ -34,6 +34,7 @@ library
       Problems.LC206.TamCarre
       Problems.LC217.TamCarre
       Problems.LC238.TamCarre
+      Problems.LC371.TamCarre
       ProblemUrls
   other-modules:
       Paths_hs_leetcode
@@ -75,6 +76,7 @@ test-suite hs-leetcode-test
       LC206Spec
       LC217Spec
       LC238Spec
+      LC371Spec
       TestUtils
       Paths_hs_leetcode
   hs-source-dirs:
