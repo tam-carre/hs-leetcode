@@ -25,6 +25,7 @@ source-repository head
 
 library
   exposed-modules:
+      ProblemData
       Problems.BinaryTree
       Problems.LC1.TamCarreOn
       Problems.LC1.TamCarreOn2
@@ -41,8 +42,8 @@ library
       Problems.LC238.TamCarre
       Problems.LC242.TamCarre
       Problems.LC371.TamCarre
+      Problems.LC49.TamCarre
       Problems.LC70.TamCarre
-      ProblemUrls
   other-modules:
       Paths_hs_leetcode
   hs-source-dirs:
@@ -89,6 +90,7 @@ test-suite hs-leetcode-test
       LC238Spec
       LC242Spec
       LC371Spec
+      LC49Spec
       LC70Spec
       TestUtils
       Paths_hs_leetcode
