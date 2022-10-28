@@ -25,8 +25,10 @@ source-repository head
 
 library
   exposed-modules:
+      Problems.BinaryTree
       Problems.LC1.TamCarreOn
       Problems.LC1.TamCarreOn2
+      Problems.LC104.TamCarre
       Problems.LC121.TamCarre
       Problems.LC125.TamCarre
       Problems.LC1358.TamCarreSlidingWindow
@@ -70,6 +72,7 @@ test-suite hs-leetcode-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      LC104Spec
       LC121Spec
       LC125Spec
       LC1358Spec
