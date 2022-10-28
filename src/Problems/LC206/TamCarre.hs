@@ -1,8 +1,8 @@
 module Problems.LC206.TamCarre (reverseList) where
 
-import Problems.LC206.NodeList (NodeList (Node, Empty))
+import Problems.LinkedList (Linked (Cons, End))
 
-reverseList :: NodeList a -> NodeList a
-reverseList = loop Empty where
-  loop reversed Empty          = reversed
-  loop reversed (Node val nxt) = loop (Node val reversed) nxt
+reverseList :: Linked a -> Linked a
+reverseList = loop End where
+  loop reversed End            = reversed
+  loop reversed (Cons val nxt) = loop (Cons val reversed) nxt

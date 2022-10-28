@@ -3,21 +3,21 @@ module LC206Spec (spec) where
 import Test.Hspec (Spec)
 import TestUtils (runTests)
 
-import Problems.LC206.NodeList (NodeList (Node, Empty))
+import Problems.LinkedList (Linked (Cons, End))
 import qualified Problems.LC206.TamCarre
 
 spec :: Spec
 spec = runTests implementations cases
 
-implementations :: [NodeList a -> NodeList a]
+implementations :: [Linked a -> Linked a]
 implementations =
   [ Problems.LC206.TamCarre.reverseList
   ]
 
-fromList :: [a] -> NodeList a
-fromList = foldr Node Empty
+fromList :: [a] -> Linked a
+fromList = foldr Cons End
 
-cases :: [(NodeList Int, NodeList Int -> Bool)]
+cases :: [(Linked Int, Linked Int -> Bool)]
 cases =
   [ (fromList [1,2,3,4,5], (==) $ fromList [5,4,3,2,1])
   , (fromList [1,2], (==) $ fromList [2,1])

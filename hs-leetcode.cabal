@@ -35,8 +35,8 @@ library
       Problems.LC121.TamCarre
       Problems.LC125.TamCarre
       Problems.LC1358.TamCarreSlidingWindow
-      Problems.LC206.NodeList
       Problems.LC206.TamCarre
+      Problems.LC21.TamCarre
       Problems.LC217.TamCarre
       Problems.LC226.TamCarre
       Problems.LC238.TamCarre
@@ -44,6 +44,7 @@ library
       Problems.LC371.TamCarre
       Problems.LC49.TamCarre
       Problems.LC70.TamCarre
+      Problems.LinkedList
   other-modules:
       Paths_hs_leetcode
   hs-source-dirs:
@@ -86,6 +87,7 @@ test-suite hs-leetcode-test
       LC1Spec
       LC206Spec
       LC217Spec
+      LC21Spec
       LC226Spec
       LC238Spec
       LC242Spec
