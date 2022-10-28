@@ -36,6 +36,7 @@ library
       Problems.LC206.NodeList
       Problems.LC206.TamCarre
       Problems.LC217.TamCarre
+      Problems.LC226.TamCarre
       Problems.LC238.TamCarre
       Problems.LC371.TamCarre
       Problems.LC70.TamCarre
@@ -81,6 +82,7 @@ test-suite hs-leetcode-test
       LC1Spec
       LC206Spec
       LC217Spec
+      LC226Spec
       LC238Spec
       LC371Spec
       LC70Spec
