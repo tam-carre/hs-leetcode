@@ -39,6 +39,7 @@ library
       Problems.LC217.TamCarre
       Problems.LC226.TamCarre
       Problems.LC238.TamCarre
+      Problems.LC242.TamCarre
       Problems.LC371.TamCarre
       Problems.LC70.TamCarre
       ProblemUrls
@@ -86,6 +87,7 @@ test-suite hs-leetcode-test
       LC217Spec
       LC226Spec
       LC238Spec
+      LC242Spec
       LC371Spec
       LC70Spec
       TestUtils
