@@ -29,6 +29,7 @@ library
       Problems.LC1.TamCarreOn
       Problems.LC1.TamCarreOn2
       Problems.LC100.TamCarre
+      Problems.LC102.TamCarre
       Problems.LC104.TamCarre
       Problems.LC121.TamCarre
       Problems.LC125.TamCarre
@@ -75,6 +76,7 @@ test-suite hs-leetcode-test
   main-is: Spec.hs
   other-modules:
       LC100Spec
+      LC102Spec
       LC104Spec
       LC121Spec
       LC125Spec
