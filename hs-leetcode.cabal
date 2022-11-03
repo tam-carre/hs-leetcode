@@ -35,6 +35,8 @@ library
       Problems.LC121.TamCarre
       Problems.LC125.TamCarre
       Problems.LC1358.TamCarreSlidingWindow
+      Problems.LC191.TamCarre
+      Problems.LC191.TamCarreNoPopCount
       Problems.LC206.TamCarre
       Problems.LC21.TamCarre
       Problems.LC217.TamCarre
@@ -85,6 +87,7 @@ test-suite hs-leetcode-test
       LC121Spec
       LC125Spec
       LC1358Spec
+      LC191Spec
       LC1Spec
       LC206Spec
       LC217Spec
