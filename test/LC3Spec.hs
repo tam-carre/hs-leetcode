@@ -4,6 +4,7 @@ import Test.Hspec (Spec)
 import TestUtils (runTests)
 
 import qualified Problems.LC3.TamCarrePythonTranslation
+import qualified Problems.LC3.TamCarreJsTranslation
 
 spec :: Spec
 spec = runTests implementations cases
@@ -11,6 +12,7 @@ spec = runTests implementations cases
 implementations :: [String -> Int]
 implementations =
   [ Problems.LC3.TamCarrePythonTranslation.lengthOfLongestSubstring
+  , Problems.LC3.TamCarreJsTranslation.lengthOfLongestSubstring
   ]
 
 cases :: [(String, Int -> Bool)]

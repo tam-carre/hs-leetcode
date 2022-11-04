@@ -43,6 +43,7 @@ library
       Problems.LC226.TamCarre
       Problems.LC238.TamCarre
       Problems.LC242.TamCarre
+      Problems.LC3.TamCarreJsTranslation
       Problems.LC3.TamCarrePythonTranslation
       Problems.LC371.TamCarre
       Problems.LC49.TamCarre
