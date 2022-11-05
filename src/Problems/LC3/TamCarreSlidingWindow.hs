@@ -1,10 +1,11 @@
 module Problems.LC3.TamCarreSlidingWindow (lengthOfLongestSubstring) where
 
-import Data.List (nub)
+import qualified Data.Set as Set
 
 -- | TODO: time complexity verification
 lengthOfLongestSubstring :: String -> Int
-lengthOfLongestSubstring = length . longestValidSubList (\s -> s == nub s)
+lengthOfLongestSubstring = length . longestValidSubList hasNoDupes where
+  hasNoDupes xs = length xs == length (Set.fromList xs)
 
 data SlidingWindow a = SW { answer :: [a], wdw :: [a] }
 
