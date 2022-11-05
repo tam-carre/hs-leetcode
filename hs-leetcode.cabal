@@ -45,6 +45,7 @@ library
       Problems.LC242.TamCarre
       Problems.LC3.TamCarreJsTranslation
       Problems.LC3.TamCarrePythonTranslation
+      Problems.LC3.TamCarreSlidingWindow
       Problems.LC371.TamCarre
       Problems.LC49.TamCarre
       Problems.LC53.TamCarre
@@ -58,6 +59,7 @@ library
   build-depends:
       base >=4.7 && <5
     , containers
+    , extra
     , hspec
     , hspec-contrib
     , mtl
@@ -73,6 +75,7 @@ executable hs-leetcode-exe
   build-depends:
       base >=4.7 && <5
     , containers
+    , extra
     , hs-leetcode
     , hspec
     , hspec-contrib
@@ -110,6 +113,7 @@ test-suite hs-leetcode-test
   build-depends:
       base >=4.7 && <5
     , containers
+    , extra
     , hs-leetcode
     , hspec
     , hspec-contrib

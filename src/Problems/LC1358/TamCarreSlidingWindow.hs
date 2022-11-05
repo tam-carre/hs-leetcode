@@ -1,5 +1,6 @@
 module Problems.LC1358.TamCarreSlidingWindow (numberOfSubstrings) where
 
+-- | Number of substrings containing a, b and c'
 numberOfSubstrings :: [Char] -> Int
 numberOfSubstrings = slidingWindow $ \window -> all (`elem` window) "abc"
 
@@ -11,4 +12,6 @@ slidingWindow validWdw list = loop list (SlidingWindow 0 []) where
     loop (x:xs)    = loop xs . while (validWdw . wdw) (shiftWdw xs) . addToWdw x
     addToWdw x sw  = sw {wdw = x:wdw sw}
     shiftWdw xs sw = sw {count = count sw + length xs + 1, wdw = init (wdw sw)}
-    while p        = until (not . p)
+
+while :: (a -> Bool) -> (a -> a) -> a -> a
+while p = until (not . p)

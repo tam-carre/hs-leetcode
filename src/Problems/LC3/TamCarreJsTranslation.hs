@@ -1,3 +1,5 @@
+{-# LANGUAGE ViewPatterns #-}
+
 module Problems.LC3.TamCarreJsTranslation (lengthOfLongestSubstring) where
 
 import qualified Data.Set as Set
@@ -8,13 +10,14 @@ lengthOfLongestSubstring :: String -> Int
 lengthOfLongestSubstring s =
   loop (Set.empty, 0, 0) [0..length s - 1] where
     loop (set, left, maxSize) (i:is) =
-      let
-      (newSet, newLeft) =
-        while (\(set', _) -> Set.member (s!!i) set')
-          (\(set', left') -> (Set.delete (s !! left') set', left' + 1))
-          (set, left)
-      in
-      loop (Set.insert (s!!i) newSet, newLeft, max maxSize (i - newLeft + 1)) is
+      loop (newSet, newLeft, newMaxSize) is where
+        (Set.insert (s!!i) -> newSet, newLeft) =
+          while (\(set', _) -> Set.member (s!!i) set')
+            (\(set', left') -> (Set.delete (s !! left') set', left' + 1))
+            (set, left)
+
+        newMaxSize =
+          max maxSize (i - newLeft + 1)
 
     loop (_, _, maxSize) [] = maxSize
 
