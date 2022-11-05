@@ -4,18 +4,18 @@ import qualified Data.Set as Set
 
 -- | TODO: time complexity verification
 lengthOfLongestSubstring :: String -> Int
-lengthOfLongestSubstring = length . longestValidSubList hasNoDupes where
-  hasNoDupes xs = length xs == length (Set.fromList xs)
+lengthOfLongestSubstring = length . longestSubList withNoDupes where
+  withNoDupes xs = length xs == length (Set.fromList xs)
 
 data SlidingWindow a = SW { answer :: [a], wdw :: [a] }
 
 -- | Generic sliding window function
-longestValidSubList :: ([a] -> Bool) -> [a] -> [a]
-longestValidSubList validWdw list = loop list (SW [] []) where
+longestSubList :: ([a] -> Bool) -> [a] -> [a]
+longestSubList validSublist list = loop list (SW [] []) where
   loop []             = answer
   loop (x:xs)         = loop xs
                       . updateAnsw
-                      . until (validWdw . wdw) shrinkWdw
+                      . until (validSublist . wdw) shrinkWdw
                       . addToWdw x
   addToWdw x (SW a w) = SW a (w ++ [x])
   shrinkWdw  (SW a w) = SW a (tail w)
