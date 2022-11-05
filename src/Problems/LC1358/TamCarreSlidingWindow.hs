@@ -12,5 +12,5 @@ validSublists valid list = loop list (SW 0 []) where
   loop []     = count
   loop (x:xs) = loop xs . until (not . valid . wdw) (shiftWdw xs) . addToWdw x
 
-  addToWdw x (SW c w)  = SW c (x:w)
+  addToWdw x  (SW c w) = SW c (x:w)
   shiftWdw xs (SW c w) = SW (c + length xs + 1) (init w)
