@@ -8,11 +8,9 @@ numberOfSubstrings = validSublists containsAbc where
 data SlidingWindow a = SW { count :: Int, wdw :: [a] }
 
 validSublists :: ([a] -> Bool) -> [a] -> Int
-validSublists validWdw list = loop list (SW 0 []) where
-  loop []        = count
-  loop (x:xs)    = loop xs . while (validWdw . wdw) (shiftWdw xs) . addToWdw x
-  addToWdw x sw  = sw {wdw = x:wdw sw}
-  shiftWdw xs sw = sw {count = count sw + length xs + 1, wdw = init (wdw sw)}
+validSublists valid list = loop list (SW 0 []) where
+  loop []     = count
+  loop (x:xs) = loop xs . until (not . valid . wdw) (shiftWdw xs) . addToWdw x
 
-while :: (a -> Bool) -> (a -> a) -> a -> a
-while p = until (not . p)
+  addToWdw x (SW c w)  = SW c (x:w)
+  shiftWdw xs (SW c w) = SW (c + length xs + 1) (init w)
