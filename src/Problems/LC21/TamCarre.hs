@@ -1,5 +1,5 @@
 module Problems.LC21.TamCarre (mergeTwoLists) where
-  
+
 import Problems.LinkedList (Linked (Cons, End))
 
 mergeTwoLists :: Linked Int -> Linked Int -> Linked Int
